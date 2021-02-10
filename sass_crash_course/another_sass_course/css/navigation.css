@@ -1,0 +1,1 @@
+.nav-container{display:flex;justify-content:center;background-color:#010C0D}.nav-container li{box-sizing:border-box;flex-basis:15%;list-style-type:none;font-size:2rem;text-align:center;padding:1em}.nav-container :nth-child(odd){background-color:yellow}.nav-container :nth-child(even){background-color:#3f0d80}

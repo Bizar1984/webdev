@@ -1,0 +1,23 @@
+$light-color:rgb(0, 128, 64);
+$primary-color: #374949;
+$secondary-color: #ff8700;
+// partial file, not to be compiled on its own... thats why we have the underscore!
+
+
+// set text color based on background
+@function set-text-color($color) {
+    @if(lightness($color)) > 70 {
+        @return #333;
+
+    } @else {
+        @return #fff;
+
+    }
+}
+
+// set background & text-color. Mixin is like a function but doesnt return anything
+@mixin set-background($color) {
+    background-color: $color;
+    color: set-text-color($color);
+
+}

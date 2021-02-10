@@ -1,0 +1,14 @@
+body {
+    background-color: orange;
+}
+
+li {
+    display: flex;
+    justify-content: space-around;
+}
+
+h3 {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}

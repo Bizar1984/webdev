@@ -1,0 +1,12 @@
+body {
+    background-color: teal;
+}
+
+#person {
+    border: 2px solid gold;
+    list-style-type: none;
+    padding: 0.625rem;
+    background-color: whitesmoke;
+    max-width: 400px;
+    margin: 10px auto;
+}

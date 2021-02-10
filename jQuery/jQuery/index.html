@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery tryOut</title>
+    <script src= "https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        body{
+            font-size: 17px;
+            font-family: Arial;
+            background: #f4f4f4;
+            line-height: 1.5em;
+        }
+        header{
+            background: #333;
+            color:#fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+        #container{
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <h1>jQuery Crash Course</h1>
+    </header>
+
+    <div id="container">
+        <h1 id="heading1">Heading One</h1>
+        <p id="para1">Olly wil honing Olly is vijf en woont met pappa en mamma in het grote bos. Pappa is timmerman.
+            Mamma is schooljuf. Het is winter en heel koud. Olly trilt en Olly bibbert. Brrr! Pappa Ralph gaat naar het
+            bos om hout te zoeken. Als hij terugkomt steekt hij de haard aan. Hij zet de thermostaat ook hoger. Nu is
+            het al gauw lekker warm. Pappa bakt pannenkoeken. Dat kan hij erg goed. Hij gooit de pannenkoek omhoog en
+            vangt hem weer op in de pan. Olly strooit er veel poedersuiker op. Ook muisjes en stroop doet hij erop! Olly
+            heeft honger. Zes pannenkoeken heeft hij al op. Maar Olly is een vreetzak. Hij heeft nog steeds honger. Nu
+            maakt mamma ook <span>zoete pap met kaneel en rozijnen. </span> Als het op is, heeft hij nog steeds honger.
+            Hij wil weer een pannenkoek. Nu met honing. Maar er is geen honing. Het is winter. Er zijn geen bloemen. Zonder bloemen
+            blijven de bijen weg. Bijen maken honing en dat is er nu niet. Maar pappa Ralph weet raad. Hij gaat naar
+            Afrika. </p>
+
+            <h1 class="heading2">Heading Two</h1>
+        <p id="para2">Olly wil honing Olly is vijf en woont met pappa en mamma in het grote bos. Pappa is timmerman.
+            Mamma is schooljuf. Het is winter en heel koud. Olly trilt en Olly bibbert. Brrr! Pappa Ralph gaat naar het
+            bos om hout te zoeken. Als hij terugkomt steekt hij de haard aan. Hij zet de thermostaat ook hoger. Nu is
+            het al gauw lekker warm. Pappa bakt pannenkoeken. Dat kan hij erg goed. Hij gooit de pannenkoek omhoog en
+            vangt hem weer op in de pan. Olly strooit er veel poedersuiker op. Ook muisjes en stroop doet hij erop! Olly
+            heeft honger. Zes pannenkoeken heeft hij al op. Maar Olly is een vreetzak. Hij heeft nog steeds honger. Nu
+            maakt mamma ook <span>zoete pap met kaneel en rozijnen. </span> Als het op is, heeft hij nog steeds honger.
+            Hij wil weer een pannenkoek. Nu met honing. Maar er is geen honing. Het is winter. Er zijn geen bloemen. Zonder bloemen
+            blijven de bijen weg. Bijen maken honing en dat is er nu niet. Maar pappa Ralph weet raad. Hij gaat naar
+            Afrika. </p>
+
+            <ul id="list">
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+
+            </ul>
+
+            <input type="button" value="Button 1">
+            <input type="submit" value="Submit">
+            <input type="text">
+
+            <a href="http://google.com">Google</a>
+            <a href="http://yahoo.com">Yahoo</a>
+
+    
+    </div>
+
+    <script>
+        // $('h1').hide()
+        // $('h1#heading1').hide()
+        // $('.heading2').hide()
+
+        // $('p span').css('color', 'red');
+        // $('ul#list li:first').css('color', 'white');
+        // $('ul#list li:last').css('color', 'white');
+        // $('ul#list li:even').css('background-color', 'blue');
+        // $('ul#list li:odd').css('background-color', 'yellow');
+        // $('ul#list li:nth-child(2n').css('list-style', 'none');
+
+        // $(':button').hide();
+        // $(':text').hide();
+        
+        //targeting attributes
+        $('[href]').css('color', 'red');
+
+         //targeting values of attributes
+        $('a[href="http://yahoo.com"]').css('color', 'green');
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+//variables
+$mobile: 800px;
+$light-text-color:#afe1f0;
+$dark-text-color:rgb(1, 1, 19);
+$bg-color: #035951;
+$bg-color-light: rgb(76, 196, 116);
+$bg-color-dark: rgb(3, 25, 36);
+$bg-color-blue: #035951;
+$bg-colors: ("darkest": #010C0D,
+    "lighter-one": #022626,
+    "lighter-two": #035951,
+    "lighter-three": #03735E,
+    "lightest": #048C66);
+
+// retrieve colors easily
+@function bg_colors($color-name) {
+    @return map-get($bg-colors, $color-name)
+};
+
+// font variables
+$font-styles: ("normal": normal,
+    "italic": italic,
+    "oblique": oblique);
+
+$font-weight: ("normal": normal,
+    "italic": bold,
+    "oblique": 900);
+
+// retrieve fonts easily
+@function font_style($font-style-name) {
+    @return map-get($font-styles, $font-style-name)
+};
+
+@function font_weight($font-weight-name) {
+    @return map-get($font-weight, $font-weight-name)
+};
+
+
+// background and text color functions
+@function set-text-color($color) {
+    @if(lightness($color))>50 {
+        // lightness is not smaller than 50, so return is light-text-color
+        @return $dark-text-color;
+
+    }
+
+    @else {
+        @return $light-text-color;
+
+    }
+}
+
+// set background & text-color. Mixin is like a function but doesnt return anything
+@mixin set-background($color) {
+    background-color: $color;
+    color: set-text-color($color);
+
+}
+
+
+// some basic arithmetic. No idea where this would be useful
+@function raise-to-power($base, $exponent) {
+    $result: 1;
+
+    @for $_ from 1 through $exponent {
+        $result: $result * $base;
+    }
+
+    ;
+    @return $result;
+}
+
+// if you don't feel like typing this all the time
+@mixin flexAround($direction) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: $direction;
+};
+
+//design themes
+@mixin light-theme($light-theme: true) {
+    @if $light-theme {
+        background-color: lighten($bg-color-dark, 70%);
+        color: darken($light-text-color, 90%);
+    }
+}
+
+@mixin dark-theme($dark-theme: true) {
+    @if $dark-theme {
+        background-color: lighten($bg-color-dark, 1%);
+        color: darken($light-text-color, 0%);
+    }
+}
+
+//media query
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+// buttons mixin
+@mixin style-buttons {
+
+    background-color: lighten(bg_colors(darkest), 5%);
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.1em 0.1em 0;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    border-radius: 2em;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 30;
+    color: white;
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+    text-align: center;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+
+
+    &:hover {
+        background-color: lighten(bg_colors(darkest), 60%);
+        border-color: white;
+    }
+}
+
+

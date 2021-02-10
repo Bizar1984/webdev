@@ -1,0 +1,24 @@
+{
+    "people": [
+        {
+        "name": "Crankjohre the Magician",
+        "age": 36
+        },
+        {
+        "name": "Benazir the African Flower",
+        "age": 29
+        },
+        {
+        "name": "Sara the Unknown",
+        "age": 25
+        },
+        {
+        "name": "Lassoefar the Engineer",
+        "age": 34
+        },
+        {
+        "name": "Mystery Man",
+        "age": 24
+        }
+    ]
+}

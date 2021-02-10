@@ -1,0 +1,22 @@
+.nav-container {
+    display: flex;
+    justify-content: center;
+    background-color:  #010C0D;
+    li {
+        box-sizing: border-box;
+        flex-basis: 15%;
+        list-style-type: none;
+        font-size: 2rem;
+        text-align: center;
+        padding: 1em;
+    }:nth-child(odd) {
+        background-color: yellow;
+    }:nth-child(even) {
+        background-color: rgb(64, 201, 128);
+    }
+}
+        
+        
+        
+
+        

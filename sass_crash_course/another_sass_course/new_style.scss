@@ -1,0 +1,102 @@
+@import './utilities/functions';
+// @import './utilities/resets';
+
+// some variables to fool around with
+
+body {
+    background-color: bg_colors(darkest);
+}
+
+.main {
+    @include flexAround(column);
+
+    .random-text {
+        flex-basis: 40%;
+        color: white;
+        text-align: center;
+        font-size: 1.6rem;
+        font-style: font_style(italic);
+    }
+}
+
+// background experiments
+.lighter-background {
+    @include set-background($bg-color-light);
+    background-color: $bg-color-light;
+    width: 80%;
+    margin: 0 auto;
+
+    .headers {
+        color: set-text-color($bg-color-light);
+        padding: raise-to-power(1, 1.2) * 1em;
+        text-align: center;
+
+    }
+
+    .raise-this {
+        margin-top: raise-to-power(1, 1) * 1em;
+        padding: raise-to-power(2, 5) * 1px;
+        border: 1px solid black;
+        font-style: text_style(oblique);
+        font-weight: font_weight(bold);
+    }
+}
+
+.darker-background {
+    @include set-background($bg-color-dark);
+    background-color: $bg-color-dark;
+    width: 80%;
+    margin: 0 auto;
+
+    h3 {
+        color: set-text-color($bg-color-dark);
+        padding: raise-to-power(2, 2) * 1em;
+        text-align: center;
+    }
+}
+
+// moving on to themes
+.themes {
+    @include flexAround(row);
+
+    .light {
+        @include light-theme($light-theme: true);
+        padding: raise-to-power(2, 5) * 1px;
+        border-radius: 50%;
+    }
+
+    .dark {
+
+        @include dark-theme($dark-theme: true);
+        padding: raise-to-power(2, 5) * 1px;
+        border-radius: 50%;
+    }
+
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+// styling the buttons
+.button-container {
+    @include flexAround(row);
+    justify-content: center;
+}
+
+.btn-style {
+    @include style-buttons;
+    padding: raise-to-power(2, 3) * 1px;
+    margin: raise-to-power(3, 3) * 1px;
+    width: 100px;
+
+    &-two {
+        @extend .btn-style;
+        background-color: $bg-color-blue;
+
+        &:hover {
+            background-color: bg_colors(darkest);
+            border-color: bg_colors(lightest);
+            color: white;
+        }
+    }
+}
